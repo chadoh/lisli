@@ -1,0 +1,39 @@
+!!!
+%html{html_attrs('en-US')}
+  %head
+    %meta(http-equiv="content-type" content="text/html;charset=UTF-8")
+    %title Blog Awesome
+    %link(rel="stylesheet" type="text/css" href="/styles")
+  %body
+    
+    /The wrap div is for the sticky footer [http://www.cssstickyfooter.com]. Don't use top/bottom margins in the CSS!
+    
+    #wrap
+      #head
+        #banner
+          %h1 Blog Awesome
+        #nav
+          %ul
+            %li 
+              %a(title="Wonderings and Wanderings" href="/")
+                Blog
+            %li 
+              %a(title="Meet your host!" href = "/about") 
+                About
+            %li
+              %a(title="Send me an email" href = "/contact")
+                Contact
+            
+      #main=yield
+      
+      #side
+        %h2 About Me
+        =haml :about, :layout => false
+        %h2 Links
+        =haml :links, :layout => false
+        -# figure this out later
+          %h2 Previous Posts
+          =haml :previous_posts, :layout => false
+          %h2 Archives
+          =haml :archives, :layout => false
+    #foot
