@@ -1,4 +1,4 @@
-%h2 Links
+
 %ul.links
   %li
     %a{ :href => "http://www.jiggzy.com", :title => "Nick Cherry is an excellent person" }

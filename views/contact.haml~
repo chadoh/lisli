@@ -1,0 +1,2 @@
+%h2 Contact Me
+%form{ :name => "contact_me", :id => "contact_me", :action => "/contact" :method => "post" }

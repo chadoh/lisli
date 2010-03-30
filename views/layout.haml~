@@ -7,7 +7,6 @@
   %body
     
     /The wrap div is for the sticky footer [http://www.cssstickyfooter.com]. Don't use top/bottom margins in the CSS!
-    
     #wrap
       #head
         #banner
@@ -27,13 +26,9 @@
       #main=yield
       
       #side
-        %h2 About Me
         =haml :about, :layout => false
-        %h2 Links
         =haml :links, :layout => false
         -# figure this out later
-          %h2 Previous Posts
           =haml :previous_posts, :layout => false
-          %h2 Archives
           =haml :archives, :layout => false
     #foot

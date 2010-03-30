@@ -1,5 +1,5 @@
 /Eventually, all of this will be editable from the frontend, I promise
-%h2 My name is #{@first_name}!
+%h1 My name is #{@first_name}!
 %p
   :textile
     #{@full_name}, to be precise, a 23-year-old designer/developer with a jovial disposition and an enthusiasm for aesthetics, geekery, and combining foods, drinks, and spices that traditionally don't mix. I'm a Pennsylvania native, born and raised in the mountainous central regions of the state. It was also there where I received my formal education in "Engineering Science":http://www.esm.psu.edu/about/ and "Electrical Engineering.":http://www.ee.psu.edu/about.asp (details about my education can be found "here":/resume, if you're interested). Towards the end of this education, I changed direction a bit and took it upon myself to learn HTML, CSS, SQL, PHP, JavaScript/jQuery, OOP, and Ajax. Then Comcast took it upon themselves to teach me Ruby, Rails, MVC, Test-Driven Development, Sinatra, Git, and many other wonderful things. I am still happily climbing the steps of this tower of learning and enjoying the views from the occasional windows. If you'd like to know anything else, I would be glad to elaborate on the life and times of #{@full_name}. "Send me and inquisitive message":/contact or follow me on one of the sites below!
