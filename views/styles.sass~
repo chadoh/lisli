@@ -1,14 +1,14 @@
 // modeling this after lisli.net
 
 //variables
-!footer_height = 150px
-!footer_border = 1px
+!footer_height = 0px
+!footer_border = 0px
 
-!grey = #888
+!grey = #555
 
 !tab_radius = 5px
 
-!simple_border = 1px solid !grey
+!simple_border = 1px "solid" !grey
 
 //mixins
 =simple_border
@@ -19,21 +19,21 @@
     family: Georgia, Serif
     weight: normal
     style: normal
-  color: !grey
+  color = !grey
     
 =tab_borders
-  -moz-border-radius-topright: !tab_radius
-  -moz-border-radius-topleft: !tab_radius
-  -webkit-border-top-right-radius: !tab_radius
-  -webkit-border-top-left-radius: !tab_radius
-  border-top-right-radius: !tab_radius
-  border-top-left-radius: !tab_radius
-  border: !simple_border
+  -moz-border-radius-topright= !tab_radius
+  -moz-border-radius-topleft= !tab_radius
+  -webkit-border-top-right-radius= !tab_radius
+  -webkit-border-top-left-radius= !tab_radius
+  border-top-right-radius= !tab_radius
+  border-top-left-radius= !tab_radius
+  border= !simple_border
   border-bottom: 0
   &:active
     border: 0
   &:hover
-    border: 1px solid (!grey - #222)
+    border= 1px "solid" (!grey - #222)
 /*
   reset
 *
@@ -67,13 +67,13 @@ body > #wrap
   min-height: 100%
 
 #main
-  overflow: auto
-  padding-bottom: !footer_height + !footer_border
+  /overflow: auto
+  padding-bottom = !footer_height + !footer_border
 
 #footer
   position: relative
-  margin-top: -(!footer_height + !footer_border)
-  height: !footer_height + !footer_border
+  margin-top= -(!footer_height + !footer_border)
+  height= !footer_height + !footer_border
   clear: both
 
 /*Opera Fix
@@ -88,8 +88,8 @@ body:before
   typography
 a
   text-decoration: none
-  color: #900
-  border-bottom: 1px dotted !grey
+  color = !grey
+  border-bottom = 1px "dotted" !grey
   outline: none
   
 h2
@@ -99,15 +99,36 @@ h2
 p
   padding: 0 0 6px 0
 
-
+/*
+  inputs
+label
+  background = !grey
+  color: #fff
+  padding: 3px
+input[type="text"], textarea
+  width: 300px
+  border = 3px "solid" !grey
+  font-size: 18px
+  padding: 7px
+  display: block
+textarea
+  height: 300px
+  
 /*
   blogger-like layout
+body
+  padding-top: 20px
 #wrap
-  width: 700px
+  width: 740px
   margin: 0 auto
+  padding: 20px
+  border = 1px "solid" !grey
+  -moz-box-shadow: #333 0 0 20px
+  -webkit-box-shadow: #333 0 0 20px
   #header
     display: block
     height: 155px
+    border-bottom = 1px "solid" !grey
     #banner
       height: 120px
       padding: 0
@@ -120,7 +141,7 @@ p
         width: 690px
         height: 110px
         +simple_border
-        color: !grey
+        color= !grey
     #nav
       ul
         float: right
@@ -129,7 +150,7 @@ p
         list-style: none
         margin: 0 !important
         height: 30px
-        border-bottom: 1px solid !grey
+        border-bottom= 1px "solid" !grey
         li
           float: left
           text-indent: 0
@@ -145,23 +166,23 @@ p
           width: 111px
           text-align: center
           text-decoration: none
-          color: !grey
+          color= !grey
           +fancy_fonts
           padding: 0
           margin: 0
           position: relative
-          top: 1px
+          top: 5px
           &:active
             outline: none
           &:hover
-            background-color: !gray + #111
+            background-color= #f0f0f0
           &.current, &.current:hover
-            background-color: !gray + #080808
+            background-color= !grey + #555
             cursor: default !important
             color: #000 !important
   #main
     #content
-      width: 450px
+      width: 480px
       float: left
       padding:
         top: 30px
@@ -172,11 +193,17 @@ p
       padding: 30px 0 0 0
       h2
         +fancy_fonts
-        font-size: 20px
+        font-size: 16px
         color: #000
+      ul
+        list-style: inside
+        li
+          list-style-image: none !important
+          padding-bottom: 6px
       
 #footer
-  background-color: #fdfdfd
-  border-top: !footer_border solid !grey
+  background-color= #ddd
+  text-align: center
+  border-top = !footer_border "solid" !grey
   width: 100%
-  padding-top: !footer_height/2 - 30px
+  padding-top: 0

@@ -2,9 +2,6 @@ require 'rubygems'
 require 'sinatra'
 require 'sass'
 
-@first_name = "Chad"
-@full_name = "Chad Ostrowski"
-
 set :sass, { :style => :compact }
 
 get "/styles.css" do
@@ -22,5 +19,5 @@ get "/" do
 end
 
 get "/:page/?" do
-  haml :params[:name]
+  haml "#{params[:page]}"
 end

@@ -19,5 +19,5 @@ get "/" do
 end
 
 get "/:page/?" do
-  haml :params[:name]
+  haml :"#{params[:page]}"
 end
