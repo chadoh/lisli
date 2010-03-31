@@ -2,6 +2,9 @@ require 'rubygems'
 require 'sinatra'
 require 'sass'
 
+@first_name = "Chad"
+@full_name = "Chad Ostrowski"
+
 set :sass, { :style => :compact }
 
 get "/styles.css" do

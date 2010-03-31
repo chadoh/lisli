@@ -11,7 +11,7 @@
     
     /The wrap div is for the sticky footer [http://www.cssstickyfooter.com]. Don't use top or bottom margins in the CSS!
     #wrap
-      #head
+      #header
         #banner
           %h1 Blog Awesome
         #nav
@@ -35,4 +35,5 @@
           -# figure this out later
             =haml :previous_posts, :layout => false
             =haml :archives, :layout => false
-    #foot
+    #footer
+      %p Thanks for reading!
