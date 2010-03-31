@@ -23,7 +23,7 @@ body > #wrap
 
 #footer
   position: relative
-  margin-top: -(!footer_height + !footer_border)
+  margin-top: -!footer_height + !footer_border
   height: !footer_height + !footer_border
   clear: both
 
