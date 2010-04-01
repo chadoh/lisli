@@ -16,9 +16,8 @@
           %h1 Blog Awesome
         #nav
           %ul
-            %li 
-              %a(title="Wonderings and Wanderings" href="/")
-                Blog
+            -active_tab_if(:title => "Wonderings and Wanderings", :href => "/") do
+              Thoughts
             %li 
               %a(title="Meet your host!" href = "/about") 
                 About

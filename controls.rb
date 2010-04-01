@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'sinatra'
+require 'haml'
 require 'sass'
 
 set :sass, { :style => :compact }
@@ -14,10 +15,20 @@ before do
   @full_name = "Chad Ostrowski"
 end
 
+helpers do
+  def partial(page, options={})
+    haml page, options.merge!(:layout => false)
+  end
+end
+
 get "/" do
   haml :home
 end
 
 get "/:page/?" do
-  haml :"#{params[:page]}"
+  begin
+    haml params[:page].to_sym
+  rescue Errno::ENOENT
+    haml :home
+  end
 end
