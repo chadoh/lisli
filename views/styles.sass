@@ -23,18 +23,22 @@
   text-transform: uppercase
 
 =tab_borders
-  -moz-border-radius-topright= !tab_radius
-  -moz-border-radius-topleft= !tab_radius
-  -webkit-border-top-right-radius= !tab_radius
-  -webkit-border-top-left-radius= !tab_radius
-  border-top-right-radius= !tab_radius
-  border-top-left-radius= !tab_radius
-  border= !simple_border
-  border-bottom: 0
+  -moz-border-radius-bottomright= !tab_radius
+  -moz-border-radius-bottomleft= !tab_radius
+  -webkit-border-bottom-right-radius= !tab_radius
+  -webkit-border-bottom-left-radius= !tab_radius
+  border-bottom-right-radius= !tab_radius
+  border-bottom-left-radius= !tab_radius
+  border= 1px solid #ccc
+  border-top: 0
   &:active
     border: 0
   &:hover
-    border= 1px "solid" (!grey - #222)
+    border: 1px solid #888
+    border-top: 0
+  &.current, &.current:hover
+    border: 1px solid #000
+    border-top: 0
 
 /*
   reset
@@ -79,7 +83,7 @@ iframe
   
 #header
   border: 1px solid #ccc
-  margin: 0px auto 10px
+  margin: 0px auto
   width: 660px
   
 div
@@ -119,7 +123,7 @@ p
   text-transform: uppercase
 
 #content
-  margin: 0 auto
+  margin: 30px auto 0
   padding: 0
   text-align: left
   width: 660px
@@ -193,7 +197,7 @@ dt
   +sans-heading-font
   letter-spacing: 0.1em
   margin: 0
-  dd
+  strong
     display: none
   
 .profile-textblock
@@ -211,30 +215,30 @@ dt
   
 #nav
   ul
-    float: right
+    width: 660px
     display: block
     clear: both
     list-style: none
-    margin: 0 !important
+    margin: -5px auto 0
     height: 30px
-    border-bottom= 1px "solid" !grey
     li
       float: left
       text-indent: 0
       padding: 0
-      margin: 0 !important
+      margin: 0 5px 0 0
       list-style-image: none !important
+      &:last-child
+        margin: 0 !important
     a
       background-color: #fff
       +tab_borders
       display: block
       height: 30px
       line-height: 30px
-      width: 111px
+      width: 210px
       text-align: center
       text-decoration: none
-      color= !grey
-      +fancy_fonts
+      color: #ccc
       padding: 0
       margin: 0
       position: relative
@@ -242,11 +246,11 @@ dt
       &:active
         outline: none
       &:hover
-        background-color= #f0f0f0
+        color: #888
       &.current, &.current:hover
-        background-color= !grey + #555
+        height: 32px
         cursor: default !important
-        color: #000 !important
+        color: #000
 
 /*
   typography

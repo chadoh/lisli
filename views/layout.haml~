@@ -9,7 +9,8 @@
       %h1#blog-title Lisli
       %p#description
         All about a certain Lisa
-    #nav
+    /
+      #nav
       %ul
         %li
           %a{:title => "Wonderings and Wanderings", :href => "/"}
