@@ -24,6 +24,14 @@ get "/:page/?" do
   begin
     haml params[:page].to_sym
   rescue Errno::ENOENT
-    haml :home
+    haml :not_found
   end
+end
+
+not_found do
+  haml :not_found
+end
+
+post "/contact/?" do
+  #figure this out (need interwebs for that...)
 end
