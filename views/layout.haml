@@ -1,37 +1,37 @@
 !!!
-%html{html_attrs('en-US')}
+%html{html_attrs('en-US'), :dir => "ltr" }
   %head
     %meta(http-equiv="content-type" content="text/html;charset=UTF-8")
-    %title Blog Awesome
+    %title Lisli
     %link(rel="stylesheet" type="text/css" href="/styles.css")
-    /This ensures the sticky footer works in IE8
-    /[if IE 8]
-      %style(type="text/css") #wrap {display:table;}
   %body
-    
-    /The wrap div is for the sticky footer [http://www.cssstickyfooter.com]. Don't use top or bottom margins in the CSS!
-    #wrap
-      #header
-        #banner
-          %h1 Blog Awesome
-        #nav
-          %ul
-            %li
-              %a(:title => "Wonderings and Wanderings", :href => "/")
-                Thoughts
-            %li 
-              %a(title="Meet your host!" href = "/about") 
-                About
-            %li
-              %a(title="Send me an email" href = "/contact")
-                Contact
-            
+    #header
+      %h1#blog-title Lisli
+      %p#description
+        All about a certain Lisa
+    /
+      #nav
+      %ul
+        %li
+          %a{:title => "Wonderings and Wanderings", :href => "/"}
+            Thoughts
+        %li 
+          %a(title="Meet your host!" href = "/language_assistance") 
+            Language Assistance
+        %li
+          %a(title="Send me an email" href = "/contact")
+            Contact
+    #content
       #main
-        #content
+        #main2
           =yield
-        #side
+      #sidebar
+        #sidebar2
+          #profile-container
+            =haml :about_blurb, :layout => false
           =haml :links, :layout => false
           -# figure this out later
             =haml :previous_posts, :layout => false
             =haml :archives, :layout => false
-    #footer
+  #footer
+    %p

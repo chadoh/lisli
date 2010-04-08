@@ -1,0 +1,33 @@
+@media all
+  #header
+    width: 660px
+    margin: 0 auto 10px
+    border: 1px solid #ccc
+
+
+
+<style type="text/css"> body
+  background: #fff
+  margin: 0
+  padding: 40px 20px
+  font: x-small Georgia,Serif
+  text-align: center
+  color: #333
+  font-size: small
+
+
+a
+  &:link
+    color: #58a
+    text-decoration: none
+
+  &:visited
+    color: #969
+    text-decoration: none
+
+  &:hover
+    color: #c60
+    text-decoration: underline
+
+  img
+    border-width: 0

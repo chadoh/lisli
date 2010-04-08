@@ -1,0 +1,17 @@
+6 April
+  Get it looking like blogger
+  Get it on GitHub
+
+7 April
+  Link to blogger profile for blog page
+  
+Later
+  Use blogger data api to reproduce blogger content natively
+    http://code.google.com/apis/blogger/
+    (can this pull profile information, too?)
+    
+  Clearn up styles.sass, remove duplication
+  
+  FORK into chadoh
+  
+  Embed Gwave for blog

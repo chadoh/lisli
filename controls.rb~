@@ -7,7 +7,7 @@ set :sass, { :style => :compact }
 
 get "/styles.css" do
   content_type 'text/css', :charset => 'utf-8'
-  sass :styles
+  css :newstyle
 end
 
 before do
@@ -16,8 +16,8 @@ before do
 end
 
 helpers do
-  def active_tab_if(attributes = {}, &block)
-    haml "%li"
+  def partial(page, options={})
+    haml page, options.merge!(:layout => false)
   end
 end
 

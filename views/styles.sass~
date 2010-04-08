@@ -1,9 +1,6 @@
 // modeling this after lisli.net
 
 //variables
-!footer_height = 0px
-!footer_border = 0px
-
 !grey = #555
 
 !tab_radius = 5px
@@ -20,7 +17,11 @@
     weight: normal
     style: normal
   color = !grey
-    
+
+=sans-heading-font  
+  font: normal normal normal 78%/1.4em 'Trebuchet MS', Trebuchet, Arial, Verdana, sans-serif
+  text-transform: uppercase
+
 =tab_borders
   -moz-border-radius-topright= !tab_radius
   -moz-border-radius-topleft= !tab_radius
@@ -34,15 +35,27 @@
     border: 0
   &:hover
     border= 1px "solid" (!grey - #222)
+
 /*
   reset
 *
   margin: 0
   padding: 0
 
+html
+  display: block
+  body
+    margin: 0px
+    padding:
+      right: 0px
+      left: 0px
+      top: 0px
+
 body
-  font: 14px/1.1 Helvetica, Sans-Serif
+  font: x-small Georgia, serif
   background-color: #fff
+  font-size: small
+  text-align: center
 
 .clear
   clear: both
@@ -53,157 +66,214 @@ img, a img
 input
   outline: none
 
-/* 
-  Sticky footer CSS by Steve Hatcher: 
-  http://www.cssstickyfooter.com/style.css
-  
-  must declare 0 margins on everything, also for main layout components use padding, not vertical margins (top and bottom) to add spacing, else those margins get added to total height and your footer gets pushed down a bit more, creating vertical scroll bars in the browser
-
-html, body, #wrap
-  height: 100%
-
-body > #wrap
-  height: auto
-  min-height: 100%
-
-#main
-  /overflow: auto
-  padding-bottom = !footer_height + !footer_border
-
-#footer
-  position: relative
-  margin-top= -(!footer_height + !footer_border)
-  height= !footer_height + !footer_border
-  clear: both
-
-/*Opera Fix
-body:before 
-  content: ""
-  height: 100%
-  float: left
-  width: 0
-  margin-top: -32767px
-  
-/*
-  typography
-a
-  text-decoration: none
-  color = !grey
-  border-bottom = 1px "dotted" !grey
-  outline: none
-  
-h2
-  padding: 0 0 10px 0
-  font: bold 20px/30px Helvetica, Sans-Serif
-
-p
-  padding: 0 0 6px 0
-
-/*
-  inputs
-label
-  background = !grey
-  color: #fff
-  padding: 3px
-input[type="text"], textarea
-  width: 300px
-  border = 3px "solid" !grey
-  font-size: 18px
-  padding: 7px
-  display: block
-textarea
-  height: 300px
-  
 /*
   blogger-like layout
-body
-  padding-top: 20px
-#wrap
-  width: 740px
-  margin: 0 auto
-  padding: 20px
-  border = 1px "solid" !grey
-  -moz-box-shadow: #333 0 0 20px
-  -webkit-box-shadow: #333 0 0 20px
-  #header
-    display: block
-    height: 155px
-    border-bottom = 1px "solid" !grey
-    #banner
-      height: 120px
-      padding: 0
-      +simple_border
-      text-align: center
-      h1
-        text-transform: uppercase
-        +fancy_fonts
-        font-size: 40px
-        width: 690px
-        height: 110px
-        +simple_border
-        color= !grey
-    #nav
-      ul
-        float: right
-        display: block
-        clear: both
-        list-style: none
-        margin: 0 !important
-        height: 30px
-        border-bottom= 1px "solid" !grey
-        li
-          float: left
-          text-indent: 0
-          padding: 0
-          margin: 0 !important
-          list-style-image: none !important
-        a
-          background-color: #fff
-          +tab_borders
-          display: block
-          height: 30px
-          line-height: 30px
-          width: 111px
-          text-align: center
-          text-decoration: none
-          color= !grey
-          +fancy_fonts
-          padding: 0
-          margin: 0
-          position: relative
-          top: 5px
-          &:active
-            outline: none
-          &:hover
-            background-color= #f0f0f0
-          &.current, &.current:hover
-            background-color= !grey + #555
-            cursor: default !important
-            color: #000 !important
-  #main
-    #content
-      width: 480px
-      float: left
-      padding:
-        top: 30px
-        right: 20px
-    #side
-      width: 200px
-      float: right
-      padding: 30px 0 0 0
-      h2
-        +fancy_fonts
-        font-size: 16px
-        color: #000
-      ul
-        list-style: inside
-        li
-          list-style-image: none !important
-          padding-bottom: 6px
-      
-#footer
-  background-color= #ddd
+#navbar-iframe
+  left: 0px
+  position: absolute
+  top: 0px
+  z-index: 500
+
+iframe
+  border: 2px inset
+  
+#header
+  border: 1px solid #ccc
+  margin: 0px auto 10px
+  width: 660px
   text-align: center
-  border-top = !footer_border "solid" !grey
-  width: 100%
-  padding-top: 0
+  
+div
+  display: block
+  
+#blog-title
+  border: solid #eee
+  border-width: 1px 1px 0px
+  color: #666
+  font-size: 200%
+  font-weight: normal
+  letter-spacing: 0.2em
+  line-height: 1.2em
+  margin: 5px 5px 0px
+  padding: 20px 20px 0.25em
+  text-transform: uppercase
+  
+h1
+  display: block
+  font-size: 2em
+  font-weight: bold
+  margin: 0.67em 0px
+  
+p
+  display: block
+  margin: 1em 0px
+  
+#description
+  border: solid #eee
+  border-width: 0px 1px 1px
+  color: #999
+  +sans-heading-font
+  letter-spacing: 0.2em
+  margin: 0px 5px 5px
+  max-width: 700px
+  padding: 0px 20px 20px
+  text-transform: uppercase
+
+#content
+  margin: 0 auto
+  padding: 0
+  text-align: left
+  width: 660px
+  
+#main
+  float: left
+  width: 410px
+
+.post
+  border-bottom: 1px dotted #ccc
+  margin: 0.5em 0 1.5em
+  padding-bottom: 1.5em
+  img
+    border: 1px solid #ddd
+    padding: 4px
+  
+h2
+  color: #999
+  +sans-heading-font
+  letter-spacing: 0.2em
+  margin: 1.5em 0px 0.75em
+  
+.post-title
+  color: #c60
+  font-size: 140%
+  font-weight: normal
+  line-height: 1.4em
+  margin: 0.25em 0 0
+  padding: 0 0 4px
+  
+.date-header
+  margin: 1.5em 0 0.5em
+  
+#sidebar
+  float: right
+  width: 220px
+  p
+    color: #666
+    line-height: 1.5em
+  ul
+    border-bottom: 1px dotted #ccc
+    list-style: none
+    margin: 0 0 1.5em
+    padding: 0 0 1.5em
+  li
+    line-height: 1.5em
+    margin: 0px
+    padding: 0 0 0.25em 15px
+    text-indent: -15px
+    
+#profile-container
+  border-bottom: 1px dotted #ccc
+  margin: 0 0 1.5em
+  padding-bottom: 1.5em
+  dl
+    margin: 0.5em 0
+  
+.profile-img
+  display: inline
+
+dt
+  display: inline
+
+.profile-img img
+  border: 1px solid #ddd
+  float: left
+  margin: 0 8px 3px 0
+  padding: 4px
+  
+.profile-data
+  +sans-heading-font
+  letter-spacing: 0.1em
+  margin: 0
+  dd
+    display: none
+  
+.profile-textblock
+  margin: 0 0 0.5em
+  
+.profile-link
+  +sans-heading-font
+  letter-spacing: 0.1em
+  margin: 0
+  
+#footer
+  clear: both
+  margin: 0 auto
+  width: 660px
+  text-align: center
+  
+#nav
+  ul
+    float: right
+    display: block
+    clear: both
+    list-style: none
+    margin: 0 !important
+    height: 30px
+    border-bottom= 1px "solid" !grey
+    li
+      float: left
+      text-indent: 0
+      padding: 0
+      margin: 0 !important
+      list-style-image: none !important
+    a
+      background-color: #fff
+      +tab_borders
+      display: block
+      height: 30px
+      line-height: 30px
+      width: 111px
+      text-align: center
+      text-decoration: none
+      color= !grey
+      +fancy_fonts
+      padding: 0
+      margin: 0
+      position: relative
+      top: 5px
+      &:active
+        outline: none
+      &:hover
+        background-color= #f0f0f0
+      &.current, &.current:hover
+        background-color= !grey + #555
+        cursor: default !important
+        color: #000 !important
+
+/*
+  typography
+  a
+    text-decoration: none
+    color = #58A
+    
+  h2
+    padding: 0 0 10px 0
+    font: bold 20px/30px Helvetica, Sans-Serif
+
+  p
+    padding: 0 0 6px 0
+
+  /*
+    inputs
+  label
+    background = !grey
+    color: #fff
+    padding: 3px
+  input[type="text"], textarea
+    width: 300px
+    border = 3px "solid" !grey
+    font-size: 18px
+    padding: 7px
+    display: block
+  textarea
+    height: 150px
