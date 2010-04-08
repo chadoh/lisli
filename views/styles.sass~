@@ -34,10 +34,10 @@
   &:active
     border: 0
   &:hover
-    border: 1px solid #888
+    border: 1px solid #aaa
     border-top: 0
   &.current, &.current:hover
-    border: 1px solid #000
+    border: 1px solid #888
     border-top: 0
 
 /*
@@ -82,7 +82,7 @@ iframe
   border: 2px inset
   
 #header
-  border: 1px solid #ccc
+  border: 1px solid #888
   margin: 0px auto
   width: 660px
   
@@ -127,13 +127,15 @@ p
   padding: 0
   text-align: left
   width: 660px
+  h2
+    display: none
   
 #main
   float: left
   width: 410px
 
 .post
-  border-bottom: 1px dotted #ccc
+  border-bottom: 1px dotted #aaa
   margin: 0.5em 0 1.5em
   padding-bottom: 1.5em
   img
@@ -164,7 +166,7 @@ h2
     color: #666
     line-height: 1.5em
   ul
-    border-bottom: 1px dotted #ccc
+    border-bottom: 1px dotted #aaa
     list-style: none
     margin: 0 0 1.5em
     padding: 0 0 1.5em
@@ -175,7 +177,7 @@ h2
     text-indent: -15px
     
 #profile-container
-  border-bottom: 1px dotted #ccc
+  border-bottom: 1px dotted #aaa
   margin: 0 0 1.5em
   padding-bottom: 1.5em
   dl
@@ -197,7 +199,7 @@ dt
   +sans-heading-font
   letter-spacing: 0.1em
   margin: 0
-  dd
+  strong
     display: none
   
 .profile-textblock
@@ -228,17 +230,19 @@ dt
       margin: 0 5px 0 0
       list-style-image: none !important
       &:last-child
-        margin: 0 !important
+        margin-right: -1px !important
+      &:first-child
+        margin-left: -1px !important
     a
       background-color: #fff
       +tab_borders
       display: block
       height: 30px
       line-height: 30px
-      width: 210px
+      width: 215px
       text-align: center
       text-decoration: none
-      color: #ccc
+      color: #aaa
       padding: 0
       margin: 0
       position: relative
@@ -247,10 +251,14 @@ dt
         outline: none
       &:hover
         color: #888
+        padding-top: 2px
       &.current, &.current:hover
-        height: 32px
+        padding-top: 3px
         cursor: default !important
         color: #000
+        text-decoration: underline
+        width: 216px
+        margin-top:-1px
 
 /*
   typography
@@ -265,17 +273,17 @@ dt
   p
     padding: 0 0 6px 0
 
-  /*
-    inputs
-  label
-    background = !grey
-    color: #fff
-    padding: 3px
-  input[type="text"], textarea
-    width: 300px
-    border = 3px "solid" !grey
-    font-size: 18px
-    padding: 7px
-    display: block
-  textarea
-    height: 150px
+/*
+  inputs
+label
+  background = !grey
+  color: #fff
+  padding: 3px
+input[type="text"], textarea
+  width: 300px
+  border = 3px "solid" !grey
+  font-size: 18px
+  padding: 7px
+  display: block
+textarea
+  height: 150px

@@ -8,18 +8,17 @@
     #header
       %h1#blog-title Lisli
       %p#description
-        All about a certain Lisa
-    /
-      #nav
+    
+    #nav
       %ul
         %li
-          %a{:title => "Wonderings and Wanderings", :href => "/"}
+          %a{ :title => "Wonderings and Wanderings", :href => "/", :class => current_tab_if('/') }
             Thoughts
         %li 
-          %a(title="Meet your host!" href = "/language_assistance") 
+          %a{ :title => "Meet your host!", :href => "/language_assistance", :class => current_tab_if('/language_assistance') }
             Language Assistance
         %li
-          %a(title="Send me an email" href = "/contact")
+          %a{ :title => "Send me an email", :href => "/contact", :class => current_tab_if(:href)}
             Contact
     #content
       #main

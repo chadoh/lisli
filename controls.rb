@@ -10,14 +10,9 @@ get "/styles.css" do
   sass :styles
 end
 
-before do
-  @first_name = "Chad"
-  @full_name = "Chad Ostrowski"
-end
-
 helpers do
-  def partial(page, options={})
-    haml page, options.merge!(:layout => false)
+  def current_tab_if(route)
+    "current" if request.path_info == route
   end
 end
 
