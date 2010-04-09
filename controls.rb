@@ -2,6 +2,7 @@ require 'rubygems'
 require 'sinatra'
 require 'haml'
 require 'sass'
+#require 'pony'
 
 set :sass, { :style => :compact }
 
@@ -32,6 +33,11 @@ not_found do
   haml :not_found
 end
 
-post "/contact/?" do
-  #figure this out (need interwebs for that...)
+post "/contact" do
+  #Pony.mail {
+  #  :to => "chad.ostrowski@gmail.com",
+  #  :from => '"' + params[:name] + '" <' + params[:email] + '>',
+  #  :subject => "Email submitted on Lisli.net",
+  #  :message => params[:message]
+  #}
 end

@@ -1,23 +1,9 @@
 // modeling this after lisli.net
 
 //variables
-!grey = #555
-
 !tab_radius = 5px
 
-!simple_border = 1px "solid" !grey
-
 //mixins
-=simple_border
-  border: !simple_border
-
-=fancy_fonts
-  font:
-    family: Georgia, Serif
-    weight: normal
-    style: normal
-  color = !grey
-
 =sans-heading-font  
   font: normal normal normal 78%/1.4em 'Trebuchet MS', Trebuchet, Arial, Verdana, sans-serif
   text-transform: uppercase
@@ -86,6 +72,15 @@ iframe
   margin: 0px auto
   width: 660px
   
+h2
+  color: #999
+  +sans-heading-font
+  letter-spacing: 0.2em
+  margin: 1.5em 0px 0.75em
+a
+  text-decoration: none
+  color = #58A
+  
 div
   display: block
   
@@ -100,12 +95,11 @@ div
   margin: 5px 5px 0px
   padding: 20px 20px 0.25em
   text-transform: uppercase
-  
-h1
-  display: block
-  font-size: 2em
-  font-weight: bold
-  margin: 0.67em 0px
+  h1
+    display: block
+    font-size: 2em
+    font-weight: bold
+    margin: 0.67em 0px
   
 p
   display: block
@@ -129,6 +123,13 @@ p
   width: 660px
   h2
     display: none
+  h1
+    display: block
+    +sans-heading-font
+    font-size: 1.5em
+    color: #666
+    margin: 0.67em 0px
+
   
 #main
   float: left
@@ -141,12 +142,6 @@ p
   img
     border: 1px solid #ddd
     padding: 4px
-  
-h2
-  color: #999
-  +sans-heading-font
-  letter-spacing: 0.2em
-  margin: 1.5em 0px 0.75em
   
 .post-title
   color: #c60
@@ -258,13 +253,10 @@ dt
         color: #000
         text-decoration: underline
         width: 216px
-        margin-top:-1px
+        margin-top: -1px
 
 /*
   typography
-  a
-    text-decoration: none
-    color = #58A
     
   h2
     padding: 0 0 10px 0
@@ -276,14 +268,16 @@ dt
 /*
   inputs
 label
-  background = !grey
+  background: #666
   color: #fff
   padding: 3px
 input[type="text"], textarea
   width: 300px
-  border = 3px "solid" !grey
+  border: 3px solid #666
   font-size: 18px
   padding: 7px
   display: block
+  font: large Georgia, serif
+  margin: 2px 0 37px
 textarea
   height: 150px
