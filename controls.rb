@@ -2,7 +2,7 @@ require 'rubygems'
 require 'sinatra'
 require 'haml'
 require 'sass'
-#require 'pony'
+require 'pony'
 
 set :sass, { :style => :compact }
 set :haml, { :ugly => true }
@@ -13,16 +13,19 @@ get "/styles.css" do
 end
 
 helpers do
+  #Helper function to add class="current" to the active tab
+  #Allows passing in either a simple string with the route name
+  #to flag on,
+  #or an array of strings if multiple states receive a flag
   def current_tab_if(route)
     flag = ""
-    #if route.length > 1
-     # for x in route
-      #  flag = route.length
-        #flag = "current" if request.path_info == route[x]
-    #  end
-    #else
+    if route.respond_to? :each
+      for x in route
+        flag = "current" if request.path_info == x
+      end
+    else
       flag = "current" if request.path_info == route
-    #end
+    end
     flag
   end
 end
@@ -44,10 +47,8 @@ not_found do
 end
 
 post "/contact" do
-  if false
   Pony.mail :to => "chad.ostrowski@gmail.com",
-    :from => '"' + params[:name] + '" <' + params[:email] + '>',
+    :from => params[:email],
     :subject => "Email submitted on Lisli.net",
     :message => params[:message]
-  end
 end

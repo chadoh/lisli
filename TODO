@@ -1,8 +1,4 @@
-make "current_tab_if" helper work with arrays
-
-fix bad markup being created by markdown/textile (unmatched closing </p>s!)
-
-make contact form functional (install pony successfully)
+make contact form functional (configure mail function (pony? ssmtp?))
 
 Use blogger data api to reproduce blogger content natively
 
