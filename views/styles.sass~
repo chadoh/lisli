@@ -79,7 +79,12 @@ h2
   margin: 1.5em 0px 0.75em
 a
   text-decoration: none
-  color = #58A
+  color: #58A
+  &:visited
+    color: #969
+  &:hover
+    color: #c60
+    text-decoration: underline
   
 div
   display: block
@@ -251,7 +256,6 @@ dt
         padding-top: 3px
         cursor: default !important
         color: #000
-        text-decoration: underline
         width: 216px
         margin-top: -1px
 
@@ -272,7 +276,7 @@ label
   color: #fff
   padding: 3px
 input[type="text"], textarea
-  width: 300px
+  width: 95%
   border: 3px solid #666
   font-size: 18px
   padding: 7px
@@ -281,3 +285,22 @@ input[type="text"], textarea
   margin: 2px 0 37px
 textarea
   height: 150px
+  
+input[type="submit"]
+  background-color: #666
+  padding: 6px 12px
+  border: none
+  color: #fff
+  cursor: pointer
+  text-shadow: 0 1px 1px #000
+  -webkit-box-shadow: 0 1px 3px #999
+  -moz-box-shadow: 0 1px 3px #999
+  font: normal 16px Georgia, serif
+  text-decoration: none
+  letter-spacing: 1px
+  &:hover
+    -webkit-box-shadow: 0 0 7px #999
+    -moz-box-shadow: 0 1px 3px #999
+  &:active
+    -webkit-box-shadow: -1px -1px 1px #999
+    -moz-box-shadow: -1px -1px 1px #999

@@ -18,7 +18,7 @@ helpers do
 end
 
 get "/" do
-  haml :home
+  haml :language_assistance
 end
 
 get "/:page/?" do
@@ -34,10 +34,10 @@ not_found do
 end
 
 post "/contact" do
-  #Pony.mail {
-  #  :to => "chad.ostrowski@gmail.com",
-  #  :from => '"' + params[:name] + '" <' + params[:email] + '>',
-  #  :subject => "Email submitted on Lisli.net",
-  #  :message => params[:message]
-  #}
+  if false
+  Pony.mail :to => "chad.ostrowski@gmail.com",
+    :from => '"' + params[:name] + '" <' + params[:email] + '>',
+    :subject => "Email submitted on Lisli.net",
+    :message => params[:message]
+  end
 end

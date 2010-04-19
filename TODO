@@ -1,14 +1,10 @@
 make contact form functional
 
-Look into Heroku
+Use blogger data api to reproduce blogger content natively
 
-Link to blogger profile for blog page
+Look into Heroku
   
 Later
-  Use blogger data api to reproduce blogger content natively
-    http://code.google.com/apis/blogger/
-    (can this pull profile information, too?)
-    
   Clear up styles.sass, remove duplication
   
   FORK into chadoh

@@ -6,3 +6,4 @@
   %input{ :name => "email", :id => "email", :type => "text" }
   %label{ :for => "message" } Your message to me
   %textarea{ :name => "message", :id => "message" }
+  %input.fancy-button{ :type => "submit", :value => "Send" }

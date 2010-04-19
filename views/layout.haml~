@@ -12,13 +12,13 @@
     #nav
       %ul
         %li
-          %a{ :title => "Wonderings and Wanderings", :href => "/", :class => current_tab_if('/') }
+          %a{ :href => "/thoughts", :class => current_tab_if('/thoughts') }
             Thoughts
         %li 
-          %a{ :title => "Meet your host!", :href => "/language_assistance", :class => current_tab_if('/language_assistance') }
+          %a{ :href => "/language_assistance", :class => current_tab_if('/') }
             Language Assistance
         %li
-          %a{ :title => "Send me an email", :href => "/contact", :class => current_tab_if(:href)}
+          %a{ :href => "/contact", :class => current_tab_if('/contact')}
             Contact
     #content
       #main
@@ -29,6 +29,7 @@
           #profile-container
             =haml :about_blurb, :layout => false
           =haml :links, :layout => false
+          =haml :printed_word, :layout => false
           -# figure this out later
             =haml :previous_posts, :layout => false
             =haml :archives, :layout => false

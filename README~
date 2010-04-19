@@ -4,4 +4,4 @@ I could probably do a lot of this more easily, but it's largely a learning excer
 
 I'm making it with Sinatra, Sass (2.whatever), and Haml. It's my first time using these languages.
 
-Lisa's site will pull from Blogger for her blog, and mine will embed a Gwave.
+I also plan to embed a wave (for my personal site) and somehow integrate with Blogger (for Lisa's personal site).
