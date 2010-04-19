@@ -5,6 +5,7 @@ require 'sass'
 #require 'pony'
 
 set :sass, { :style => :compact }
+set :haml, { :ugly => true }
 
 get "/styles.css" do
   content_type 'text/css', :charset => 'utf-8'
@@ -13,7 +14,16 @@ end
 
 helpers do
   def current_tab_if(route)
-    "current" if request.path_info == route
+    flag = ""
+    #if route.length > 1
+     # for x in route
+      #  flag = route.length
+        #flag = "current" if request.path_info == route[x]
+    #  end
+    #else
+      flag = "current" if request.path_info == route
+    #end
+    flag
   end
 end
 
