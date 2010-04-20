@@ -3,6 +3,8 @@ require 'sinatra'
 require 'haml'
 require 'sass'
 require 'pony'
+require 'crack'
+require 'open-uri'
 
 set :sass, { :style => :compact }
 set :haml, { :ugly => true }
@@ -32,6 +34,15 @@ end
 
 get "/" do
   haml :language_assistance
+end
+
+#loads in blogger feed
+get "/thoughts" do
+  url = "http://www.blogger.com/feeds/9096209599953091034/posts/default"
+  xml = open(url).read
+  @feed = Crack::XML.parse(xml)
+
+  haml :thoughts
 end
 
 get "/:page/?" do

@@ -1,6 +1,7 @@
 make contact form functional (configure mail function (pony? ssmtp?))
 
 Use blogger data api to reproduce blogger content natively
+  successfully pulling feed, now narrow it and make it pretty
 
 Look into Heroku
   
