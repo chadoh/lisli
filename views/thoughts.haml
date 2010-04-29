@@ -1,8 +1,1 @@
--t = time_from_iso_format_str(@posts[1]['published'])
-%h2.date-header= t.strftime('%A, %B %d, %Y')
-.post
-  %h3.post-title= @posts[1].title
-  .post-body
-    %div
-      %div(style="clear:both;")
-      %p= @posts[1].content
+= partial(:post, :collection => @posts)
