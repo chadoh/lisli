@@ -1,0 +1,8 @@
+source "http://rubygems.org"
+gem "sinatra"
+gem "rack"
+gem "haml"
+gem "pony"
+gem "crack"
+gem "rack-flash"
+gem "bluecloth"

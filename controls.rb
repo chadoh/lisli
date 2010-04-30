@@ -1,12 +1,16 @@
-require 'rubygems'
+require "rubygems"
+require "bundler"
+Bundler.setup
+
 require 'sinatra'
 require 'sinatra/base'
+require 'rack'
 require 'haml'
 require 'sass'
-require 'pony'
-require 'crack'
-require 'open-uri'
 require 'partials'
+require 'open-uri'
+require 'crack'
+require 'pony'
 require 'rack-flash'
 
 enable :sessions
