@@ -1,0 +1,53 @@
+--- 
+dependencies: 
+  pony: 
+    group: 
+    - :default
+    version: ">= 0"
+  bluecloth: 
+    group: 
+    - :default
+    version: ">= 0"
+  haml: 
+    group: 
+    - :default
+    version: ">= 0"
+  crack: 
+    group: 
+    - :default
+    version: ">= 0"
+  rack: 
+    group: 
+    - :default
+    version: ">= 0"
+  sinatra: 
+    group: 
+    - :default
+    version: ">= 0"
+  rack-flash: 
+    group: 
+    - :default
+    version: ">= 0"
+specs: 
+- bluecloth: 
+    version: 2.0.7
+- crack: 
+    version: 0.1.7
+- haml: 
+    version: 2.2.24
+- mime-types: 
+    version: "1.16"
+- tmail: 
+    version: 1.2.7.1
+- pony: 
+    version: 0.9.1
+- rack: 
+    version: 1.1.0
+- rack-flash: 
+    version: 0.1.1
+- sinatra: 
+    version: "1.0"
+hash: c2dbe84341c9c9af47777e048e7b599ce9b2338f
+sources: 
+- Rubygems: 
+    uri: http://rubygems.org
