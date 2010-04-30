@@ -1,11 +1,15 @@
 require 'rubygems'
 require 'sinatra'
+require 'sinatra/base'
 require 'haml'
 require 'sass'
 require 'pony'
 require 'crack'
 require 'open-uri'
 require 'partials'
+require 'rack-flash'
+
+enable :sessions
 
 set :sass, { :style => :compact }
 set :haml, { :ugly => true }
@@ -17,6 +21,7 @@ end
 
 helpers do
   include Sinatra::Partials
+  use Rack::Flash, :accessorize => [:notice]
 
   #Helper function to add class="current" to the active tab
   #Allows passing in either a simple string with the route name
@@ -86,8 +91,8 @@ not_found do
 end
 
 post "/contact" do
-  Pony.mail :to => "chad.ostrowski@gmail.com",
-    :from => params[:email],
-    :subject => "Email submitted on Lisli.net",
-    :message => params[:message]
+  Pony.mail(:to => 'chad.ostrowski@gmail.com', :from => 'chad.ostrowski@gmail.com', :subject => 'Email submitted on Lisli.net', :message => 'Hello!')
+  
+  flash.now[:notice] = "Thanks for your message! I'll get back to you soon."
+  haml :contact
 end

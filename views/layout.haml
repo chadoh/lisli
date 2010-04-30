@@ -4,6 +4,7 @@
     %meta(http-equiv="content-type" content="text/html;charset=UTF-8")
     %title Lisli
     %link(rel="stylesheet" type="text/css" href="/styles.css")
+    %link(rel="shortcut icon" href="images/favicon.ico")
   %body
     #header
       %h1#blog-title Lisli
@@ -23,6 +24,8 @@
     #content
       #main
         #main2
+          -if flash[:notice]
+            #notice= flash[:notice]
           =yield
       #sidebar
         #sidebar2
