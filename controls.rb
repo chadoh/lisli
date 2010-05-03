@@ -101,12 +101,7 @@ not_found do
 end
 
 post "/contact" do
-  Pony.mail(:from => 'chad.ostrowski@gmail.com',
-    :to => 'chad.ostrowski@gmail.com',
-    :subject => 'Mail from Lisli.net!',
-    :body => 'Woooo!',
-    :via => :smtp,
-    :via_options => {
+  Pony.mail(:to => 'chad.ostrowski@gmail.com', :from => 'chad@lisli.net', :subject => 'Mail from Lisli.net!', :body => 'Woooo!', :via => :smtp, :via_options => {
       :address => 'smtp.sendgrid.net',
       :port => '25',
       :authentication => :plain,
