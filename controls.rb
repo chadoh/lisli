@@ -16,8 +16,8 @@ require 'sass'
 require 'partials'
 require 'open-uri'
 require 'crack'
-require 'pony'
 require 'rack-flash'
+require 'pony'
 
 enable :sessions
 
@@ -101,7 +101,21 @@ not_found do
 end
 
 post "/contact" do
-  Pony.mail(:to => 'chad.ostrowski@gmail.com', :from => 'chad.ostrowski@gmail.com', :subject => 'Email submitted on Lisli.net', :message => 'Hello!')
+  Pony.mail(
+    :from => 'chad.ostrowski@gmail.com',
+    :to => 'chad.ostrowski@gmail.com',
+    :subject => 'Mail from Lisli.net!',
+    :body => 'Woooo!',
+    :via => :smtp,
+    :via_options => {
+      :address => 'smtp.sendgrid.net',
+      :port => '25',
+      :authentication => :plain,
+      :user_name => ENV['SENDGRID_USERNAME'],
+      :password => ENV['SENDGRID_PASSWORD'],
+      :domain => ENV['SENDGRID_DOMAIN']
+    }
+  )
   
   flash.now[:notice] = "Thanks for your message! I'll get back to you soon."
   haml :contact
