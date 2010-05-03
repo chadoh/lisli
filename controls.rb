@@ -101,8 +101,7 @@ not_found do
 end
 
 post "/contact" do
-  Pony.mail(
-    :from => 'chad.ostrowski@gmail.com',
+  Pony.mail(:from => 'chad.ostrowski@gmail.com',
     :to => 'chad.ostrowski@gmail.com',
     :subject => 'Mail from Lisli.net!',
     :body => 'Woooo!',
