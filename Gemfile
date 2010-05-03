@@ -4,6 +4,6 @@ gem "rack"
 gem "haml"
 gem "crack"
 gem "rack-flash"
-gem "RedCloth"
+gem "bluecloth"
 gem "shotgun"
 gem 'pony'

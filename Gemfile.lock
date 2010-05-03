@@ -1,11 +1,11 @@
 --- 
-hash: 184b12f5b5a6427569409544bd14978b6ba3f5fd
+hash: 001cbe373b6a21d70502524e97c64e70de3f4c00
 sources: 
 - Rubygems: 
     uri: http://rubygems.org
 specs: 
-- RedCloth: 
-    version: 4.2.3
+- bluecloth: 
+    version: 2.0.7
 - crack: 
     version: 0.1.7
 - haml: 
@@ -45,7 +45,7 @@ dependencies:
     version: ">= 0"
     group: 
     - :default
-  RedCloth: 
+  bluecloth: 
     version: ">= 0"
     group: 
     - :default
