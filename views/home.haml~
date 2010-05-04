@@ -1,6 +1,0 @@
-%h2 Thoughts
-%p
-  :textile
-    So I want to "embed a wave":http://code.google.com/apis/wave/embed/guide.html in this here page.
-    Doesn't seem very complicated, I agree. But! I need scripts on _this_ page that the other pages on the site don't have. These need to go in the &lt;head&gt;. But I insist that I shall only have one layout. And I don't want to clutter it up with logic.
-    At this point I'm thinking the best way to do this would be with helper functions? I'll create separate branches for each approach.
