@@ -1,8 +1,37 @@
 --- 
-hash: 001cbe373b6a21d70502524e97c64e70de3f4c00
-sources: 
-- Rubygems: 
-    uri: http://rubygems.org
+dependencies: 
+  pony: 
+    group: 
+    - :default
+    version: ">= 0"
+  bluecloth: 
+    group: 
+    - :default
+    version: ">= 0"
+  haml: 
+    group: 
+    - :default
+    version: ">= 0"
+  crack: 
+    group: 
+    - :default
+    version: ">= 0"
+  rack: 
+    group: 
+    - :default
+    version: ">= 0"
+  sinatra: 
+    group: 
+    - :default
+    version: ">= 0"
+  rack-flash: 
+    group: 
+    - :default
+    version: ">= 0"
+  shotgun: 
+    group: 
+    - :default
+    version: ">= 0"
 specs: 
 - bluecloth: 
     version: 2.0.7
@@ -24,36 +53,7 @@ specs:
     version: "0.6"
 - sinatra: 
     version: "1.0"
-dependencies: 
-  sinatra: 
-    version: ">= 0"
-    group: 
-    - :default
-  rack: 
-    version: ">= 0"
-    group: 
-    - :default
-  haml: 
-    version: ">= 0"
-    group: 
-    - :default
-  crack: 
-    version: ">= 0"
-    group: 
-    - :default
-  rack-flash: 
-    version: ">= 0"
-    group: 
-    - :default
-  bluecloth: 
-    version: ">= 0"
-    group: 
-    - :default
-  shotgun: 
-    version: ">= 0"
-    group: 
-    - :default
-  pony: 
-    version: ">= 0"
-    group: 
-    - :default
+hash: 001cbe373b6a21d70502524e97c64e70de3f4c00
+sources: 
+- Rubygems: 
+    uri: http://rubygems.org
