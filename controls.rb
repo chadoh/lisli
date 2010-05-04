@@ -115,7 +115,7 @@ post "/contact" do
       :password => ENV['SENDGRID_PASSWORD'],
       :domain => ENV['SENDGRID_DOMAIN']
     }
-  )
+  end
   
   flash.now[:notice] = "Thanks for your message! I'll get back to you soon."
   haml :contact
