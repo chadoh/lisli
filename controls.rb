@@ -101,22 +101,24 @@ not_found do
 end
 
 post "/contact" do
-  Pony.mail do
-    :to => 'chad.ostrowski@gmail.com',
+  smtp_options = { :address => 'smtp.sendgrid.net',
+    :port => '25',
+    :authentication => :plain,
+    :user_name => ENV['SENDGRID_USERNAME'],
+    :password => ENV['SENDGRID_PASSWORD'],
+    :domain => ENV['SENDGRID_DOMAIN']
+  }
+  mail_options = { :to => 'chad.ostrowski@gmail.com',
     :from => 'chad@lisli.net',
-    :subject => 'Mail from Lisli.net!',
     :body => 'Woooo!',
+    :subject => "Mail from Lisli.net!",
     :via => :smtp,
-    :via_options => {
-      :address => 'smtp.sendgrid.net',
-      :port => '25',
-      :authentication => :plain,
-      :user_name => ENV['SENDGRID_USERNAME'],
-      :password => ENV['SENDGRID_PASSWORD'],
-      :domain => ENV['SENDGRID_DOMAIN']
-    }
-  end
-  
+    :via_options => smtp_options
+  }
+  puts mail_options.keys
+  puts smtp_options.keys
+  Pony.mail mail_options
+ 
   flash.now[:notice] = "Thanks for your message! I'll get back to you soon."
   haml :contact
 end
