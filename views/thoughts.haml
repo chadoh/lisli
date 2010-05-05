@@ -1,1 +1,5 @@
+- content_for :from_blogger do
+  =haml :blogger_shoutout, :layout => false
+- content_for :subscribe do
+  =haml :subscribe_to_posts, :layout => false
 = partial(:post, :collection => @posts)

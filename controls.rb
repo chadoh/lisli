@@ -18,6 +18,7 @@ require 'open-uri'
 require 'crack'
 require 'rack-flash'
 require 'pony'
+require 'sinatra/content_for'
 
 enable :sessions
 

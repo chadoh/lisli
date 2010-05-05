@@ -31,10 +31,12 @@
         #sidebar2
           #profile-container
             =haml :about_blurb, :layout => false
+          =yield_content :from_blogger
           =haml :links, :layout => false
           =haml :printed_word, :layout => false
           -# figure this out later
             =haml :previous_posts, :layout => false
             =haml :archives, :layout => false
+          =yield_content :subscribe
   #footer
     %p

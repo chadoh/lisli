@@ -4,6 +4,7 @@ gem "rack"
 gem "haml"
 gem "crack"
 gem "rack-flash"
-gem "bluecloth"
+gem "rdiscount"
 gem "shotgun"
 gem 'pony'
+gem 'sinatra-content-for'
