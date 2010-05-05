@@ -1,7 +1,0 @@
-This is my (& Lisa's) eventual personal site. It'll be forked at some point.
-
-I could probably do a lot of this more easily, but it's largely a learning excercise.
-
-I'm making it with Sinatra, Sass (2.whatever), and Haml. It's my first time using these languages.
-
-Lisa's site will pull from Blogger for her blog, and mine will embed a Gwave.
