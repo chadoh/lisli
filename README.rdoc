@@ -1,10 +1,12 @@
 =Lisli
 
-This is Lisa's personal blog. It is powered by Sinatra, Haml, and Sass, as well as many other invaluable gems.
+This is Lisa's personal blog. It is powered by Sinatra, Haml, and Sass, and many other invaluable gems.
 
 You can visit it on heroku[http://stark-moon-37.heroku.com/thoughts] (the url will be more sensible once I get the contact form working).
 
-Things are definitely rough around the edges. You might even cut yourself on the abominable contact form. ({Ben Prew}[http://github.com/benprew/pony] tells me that Pony ought to be updated in the next coupla days and that it *may* solve all of my problems. We'll see.)
+Things are definitely rough around the edges. You might even cut yourself on the abominable contact form. ({Ben Prew}[http://github.com/benprew/pony] tells me that Pony ought to be updated in the next coupla days and that it _may_ solve all of my problems. We'll see.)
 
 ==Getting Blooger content (isn't that a fabulous typo?)
-The /thoughts page pulls the last 10 (11, for the time being, because one is ignored) entries from Blogger using the GData API. This is accomplished using the gems open-uri and crack. The resulting Monster Hash is the navigated using a fabulous dot notation by {extending the Hash class}[http://www.goodercode.com/wp/convert-your-hash-keys-to-object-properties-in-ruby/] (there's probably a better way to do that, but like Kerry, I too will code gooder one day and don't know the better way yet).
+The /thoughts page pulls the last 10 (ok, 11 for the time being, because one is ignored) entries from Blogger using the GData API. 
+
+The xml returned by open-uri is parsed with crack and turned into a big ol' hash. Rather than navigating this nasty creature the usal way, I {extend the Hash class}[http://www.goodercode.com/wp/convert-your-hash-keys-to-object-properties-in-ruby/] so that I can access hash keys as object properties (that is, with dot notation). (There's probably a better way to do that, but like Kerry, I too will code gooder one day and don't yet know this better way. Enlighten us if you'd be so kind.)

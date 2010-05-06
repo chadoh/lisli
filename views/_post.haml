@@ -6,4 +6,9 @@
     .post-body
       %div
         %div(style="clear:both;")
-        %p= post.content 
+        = post.content 
+    %p.post-footer
+      %em
+        posted by Lisa at 
+        %a.post-footer-link{ :href => post.link[4].href, :title => "permanent link" }
+          = t.strftime('%I:%M %p')

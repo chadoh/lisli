@@ -1,6 +1,5 @@
 make contact form functional (hopefuly Pony 1.0 will fix all my woes)
 
-Add posted time at bottom of each post
 Show labels (initially links to blogger, then by pulling fresh blogger content into here)
 Show number of comments (slide-toggle them when clicked)
 Add pagination (without and then with ajax calls)
