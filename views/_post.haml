@@ -7,6 +7,10 @@
       %div
         %div(style="clear:both;")
         = post.content 
+        %div(style="clear:both; padding-bottom:0.25em")
+        %p.blogger-labels
+          Labels: 
+          =partial :label, :collection => post.category, :spacer_string => ", " 
     %p.post-footer
       %em
         posted by Lisa at 

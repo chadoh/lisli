@@ -9,9 +9,14 @@ module Sinatra::Partials
     options = args.last.is_a?(Hash) ? args.pop : {}
     options.merge!(:layout => false)
     if collection = options.delete(:collection) then
+      spacer_string = options.delete(:spacer_string)
       collection.inject([]) do |buffer, member|
-        buffer << haml(:"#{template}", options.merge(:layout =>
+        rendered = haml(:"#{template}", options.merge(:layout =>
         false, :locals => {template_array[-1].to_sym => member}))
+        if spacer_string
+          rendered << spacer_string if member != collection.last
+        end
+        buffer << rendered
       end.join("\n")
     else
       haml(:"#{template}", options)
