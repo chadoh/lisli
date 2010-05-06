@@ -1,7 +1,16 @@
-# stolen from http://github.com/cschneid/irclogger/blob/master/lib/partials.rb
-#   and made a lot more robust by me
-# this implementation uses erb by default. if you want to use any other template mechanism
-#   then replace `erb` on line 13 and line 17 with `haml` or whatever 
+# stolen from http://gist.github.com/119874 and made a tiny bit more robust by me
+# this implementation uses haml by default. if you want to use any other template mechanism
+#   then replace `erb` on line 23 and line 31 with `erb` or whatever 
+
+#This implementation varies from lenary's because it allows a :spacer_string to be specified
+# a spacer_string works the same way as a :spacer_template in rails,
+# except instead of rendering a page it plops in a string, 
+# but only in between elements of the collection, not at the end.
+# This is useful if you have, say, a collection of blog tags, 
+# rendered as a collection of links with commas between them.
+
+#DISCLAIMER: I have never used a :spacer_template in rails,
+#so I designed this from my perhaps-misguided understanding of it.
 module Sinatra::Partials
   def partial(template, *args)
     template_array = template.to_s.split('/')
