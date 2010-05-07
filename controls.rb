@@ -80,11 +80,12 @@ end
 #loads in blogger feed
 get "/thoughts" do
   #for testing in irb:
-  #require 'open-uri'; require 'crack'; url = 'http://www.blogger.com/feeds/9096209599953091034/posts/default';xml = open(url).read;feed = Crack::XML.parse(xml).feed;posts = feed.entry;
+  #require 'open-uri'; require 'crack'; url = 'http://www.blogger.com/feeds/9096209599953091034/posts/default?max-results=10';xml = open(url).read;feed = Crack::XML.parse(xml).feed;posts = feed.entry;
   url = 'http://www.blogger.com/feeds/9096209599953091034/posts/default?max-results=11'
   xml = open(url).read
   feed = Crack::XML.parse(xml).feed
   @posts = feed.entry
+  
   
   haml :thoughts
 end
@@ -105,7 +106,7 @@ post "/contact" do
   smtp_options = { :address => 'smtp.sendgrid.net',
     :port => '25',
     :authentication => :plain,
-    :user_name => ENV['SENDGRID_USERNAME'],
+    :user => ENV['SENDGRID_USERNAME'],
     :password => ENV['SENDGRID_PASSWORD'],
     :domain => ENV['SENDGRID_DOMAIN']
   }

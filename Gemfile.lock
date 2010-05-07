@@ -37,16 +37,22 @@ dependencies:
     - :default
     version: ">= 0"
 specs: 
+- activesupport: 
+    version: 2.3.5
 - crack: 
     version: 0.1.7
 - haml: 
     version: 2.2.24
 - mime-types: 
     version: "1.16"
-- tmail: 
-    version: 1.2.7.1
+- polyglot: 
+    version: 0.3.1
+- treetop: 
+    version: 1.4.5
+- mail: 
+    version: 2.2.0
 - pony: 
-    version: 0.9.1
+    version: "1.0"
 - rack: 
     version: 1.1.0
 - rack-flash: 
