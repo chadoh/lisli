@@ -111,8 +111,8 @@ post "/contact" do
     :domain => ENV['SENDGRID_DOMAIN']
   }
   mail_options = { :to => 'chad.ostrowski@gmail.com',
-    :from => 'chad@lisli.net',
-    :body => 'Woooo!',
+    :from => '"' + params[:name] + '" <' + params[:email] + '>',
+    :body => params[:message],
     :subject => "Mail from Lisli.net!",
     :via => :smtp,
     :via_options => smtp_options
