@@ -8,3 +8,4 @@ gem "rdiscount"
 gem "shotgun"
 gem 'pony'
 gem 'sinatra-content-for'
+gem 'mollom'

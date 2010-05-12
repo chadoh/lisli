@@ -1,4 +1,5 @@
-make contact form functional (hopefuly Pony 1.0 will fix all my woes)
+Complete Mollom contact form validation
+Sinatra form validation?
 
 Show number of comments (slide-toggle them when clicked)
 Add pagination (without and then with ajax calls)

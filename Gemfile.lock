@@ -8,6 +8,10 @@ dependencies:
     group: 
     - :default
     version: ">= 0"
+  mollom: 
+    group: 
+    - :default
+    version: ">= 0"
   haml: 
     group: 
     - :default
@@ -20,11 +24,11 @@ dependencies:
     group: 
     - :default
     version: ">= 0"
-  rack-flash: 
+  sinatra: 
     group: 
     - :default
     version: ">= 0"
-  sinatra: 
+  rack-flash: 
     group: 
     - :default
     version: ">= 0"
@@ -42,7 +46,7 @@ specs:
 - crack: 
     version: 0.1.7
 - haml: 
-    version: 2.2.24
+    version: 3.0.2
 - mime-types: 
     version: "1.16"
 - polyglot: 
@@ -51,6 +55,8 @@ specs:
     version: 1.4.5
 - mail: 
     version: 2.2.0
+- mollom: 
+    version: 0.2.2
 - pony: 
     version: "1.0"
 - rack: 
@@ -65,7 +71,7 @@ specs:
     version: "1.0"
 - sinatra-content-for: 
     version: "0.2"
-hash: dcc4990e2b1a030cd53d4dbf7731d40d3770a80e
+hash: 102f4eedf1209af56c2dad800f167ad29ea5ce4f
 sources: 
 - Rubygems: 
     uri: http://rubygems.org

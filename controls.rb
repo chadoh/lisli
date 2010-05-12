@@ -19,6 +19,7 @@ require 'crack'
 require 'rack-flash'
 require 'pony'
 require 'sinatra/content_for'
+require 'mollom'
 
 enable :sessions
 
@@ -104,20 +105,36 @@ not_found do
 end
 
 post "/contact" do
-  #form validation in Sinatra?
+  #backend form validation in Sinatra?
   #put it here!
-  Pony.mail :to => 'chad.ostrowski@gmail.com',
-    :from => '"' + params[:name] + '" <' + params[:email] + '>',
-    :body => params[:message],
-    :subject => "Mail from Lisli.net!",
-    :via => :smtp,
-    :via_options => { :address => 'smtp.sendgrid.net',
-      :port => '25',
-      :authentication => :plain,
-      :user => ENV['SENDGRID_USERNAME'],
-      :password => ENV['SENDGRID_PASSWORD'],
-      :domain => ENV['SENDGRID_DOMAIN']
-    }
-  flash.now[:notice] = "Thanks for your message! I'll get back to you soon."
-  haml :contact
+#  m = Mollom.new(:private_key => 'none yet', :public_key => 'ni esto')
+#
+#  content = m check_content(:post_body => params[:message], :author_name => params[:name])
+#
+#  if content.spam?
+#    flash.now[:notice] = "Sorry, that message seemed like it was written by a robot. Are you a robot? Go away! Otherwise, write something less spammy, please!"
+#    haml :contact
+#  elsif content.unsure?
+#    flash.now[:notice] = "Hmm... You might be a robot? It's hard to tell, these days. Please verify your humanity."
+#    @mollom = m.image_captcha(:session_id => content.session_id)["url"]
+#    
+#    #check captcha response before all of this, put @mollom in page
+#
+#    haml:contact
+#  else
+    Pony.mail :to => 'chad.ostrowski@gmail.com',
+      :from => '"' + params[:name] + '" <' + params[:email] + '>',
+      :body => params[:message],
+      :subject => "Mail from Lisli.net!",
+      :via => :smtp,
+      :via_options => { :address => 'smtp.sendgrid.net',
+        :port => '25',
+        :authentication => :plain,
+        :user => ENV['SENDGRID_USERNAME'],
+        :password => ENV['SENDGRID_PASSWORD'],
+        :domain => ENV['SENDGRID_DOMAIN']
+      }
+    flash.now[:notice] = "Thanks for your message! I'll get back to you soon."
+    haml :contact
+#  end
 end

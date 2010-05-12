@@ -1,7 +1,7 @@
 $(function() {
   
   $("form").validate({
-    debug: true,
+    /*debug: true,*/
     messages: {
       email: {
         required: "I need your email address, please!",
