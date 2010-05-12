@@ -86,6 +86,7 @@ get "/thoughts" do
   feed = Crack::XML.parse(xml).feed
   @posts = feed.entry
   
+  #make work when offline, give an error
   
   haml :thoughts
 end
@@ -103,24 +104,20 @@ not_found do
 end
 
 post "/contact" do
-  smtp_options = { :address => 'smtp.sendgrid.net',
-    :port => '25',
-    :authentication => :plain,
-    :user => ENV['SENDGRID_USERNAME'],
-    :password => ENV['SENDGRID_PASSWORD'],
-    :domain => ENV['SENDGRID_DOMAIN']
-  }
-  mail_options = { :to => 'chad.ostrowski@gmail.com',
+  #form validation in Sinatra?
+  #put it here!
+  Pony.mail :to => 'chad.ostrowski@gmail.com',
     :from => '"' + params[:name] + '" <' + params[:email] + '>',
     :body => params[:message],
     :subject => "Mail from Lisli.net!",
     :via => :smtp,
-    :via_options => smtp_options
-  }
-  puts mail_options.keys
-  puts smtp_options.keys
-  Pony.mail mail_options
- 
+    :via_options => { :address => 'smtp.sendgrid.net',
+      :port => '25',
+      :authentication => :plain,
+      :user => ENV['SENDGRID_USERNAME'],
+      :password => ENV['SENDGRID_PASSWORD'],
+      :domain => ENV['SENDGRID_DOMAIN']
+    }
   flash.now[:notice] = "Thanks for your message! I'll get back to you soon."
   haml :contact
 end

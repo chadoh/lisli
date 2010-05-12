@@ -87,6 +87,9 @@ a
 div
   display: block
   
+div.feedback
+  display: none
+
 #blog-title
   border: solid #eee
   border-width: 1px 1px 0px
@@ -306,10 +309,21 @@ input[type="text"], textarea
   padding: 7px
   display: block
   font: large Georgia, serif
-  margin: 2px 0 37px
+  margin: 2px 0 10px
 textarea
   height: 150px
   
+input.error, textarea.error
+  background: #fed
+
+label.error[generated=true]
+  background: #fff
+  color: #c60
+  padding: 0
+  -webkit-box-shadow: none
+  -moz-box-shado: none
+  box-shadow: none
+
 input[type="submit"]
   background-color: #666
   padding: 6px 12px
@@ -332,13 +346,14 @@ input[type="submit"]
 input[type="text"], textarea, #notice, label
   -webkit-box-shadow: 0 0 3px #999
   -moz-box-shadow: 0 0 3px #999
+  box-shadoh: 0 0 3px #999
 
 #notice
-  background: #ffe099
+  background: #fed
   border: 2px solid #c60
   margin: 0 0 20px
   padding: 10px
   text-align: center
 
 ::selection
-  background: #ffe099
+  background: #fed

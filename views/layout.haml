@@ -5,11 +5,11 @@
     %title Lisli
     %link(rel="stylesheet" type="text/css" href="/styles.css")
     %link(rel="shortcut icon" href="images/favicon.ico")
+    =yield_content :validation
   %body
     #header
       %h1#blog-title Lisli
       %p#description
-    
     #nav
       %ul
         %li
@@ -38,5 +38,5 @@
             =haml :previous_posts, :layout => false
             =haml :archives, :layout => false
           =yield_content :subscribe
-  #footer
-    %p
+    #footer
+      %p
